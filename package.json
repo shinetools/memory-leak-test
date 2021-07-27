@@ -1,0 +1,19 @@
+{
+  "name": "memory-leak-test-service",
+  "version": "0.0.1",
+  "description": "memory-leak-test webservice",
+  "main": "app.js",
+  "engines": {
+    "node": "^10.4.0",
+    "yarn": "^1.3.2"
+  },
+  "dependencies": {
+    "@google-cloud/debug-agent": "^5.2.7",
+    "@google-cloud/spanner": "^5.12.0",
+    "express": "^4.16.3",
+    "express-http-context": "^1.2.3",
+    "helmet": "^3.16.0",
+    "swagger-express-mw": "^0.7.0",
+    "yes-https": "^1.0.0"
+  }
+}

@@ -1,0 +1,47 @@
+swagger: '2.0'
+info:
+  version: 2.0.0
+  title: memory leak test
+host: memory-leak-test.endpoints.PROJECT_ID.cloud.goog
+tags:
+  - name: Transaction enrichment
+x-google-endpoints:
+  - name: memory-leak-test.endpoints.PROJECT_ID.cloud.goog
+    allowCors: true
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /memory_leak_test/liveness_check:
+    x-swagger-router-controller: internal
+    get:
+      tags:
+        - Health check
+      description: Health checking liveness endpoint
+      operationId: liveness
+      responses:
+        '200':
+          description: all is well
+  /memory_leak_test/readiness_check:
+    x-swagger-router-controller: internal
+    get:
+      tags:
+        - Health check
+      description: Health checking readiness endpoint
+      operationId: readiness
+      responses:
+        '200':
+          description: all is well
+definitions:
+  ErrorResponse:
+    required:
+      - message
+      - status
+    properties:
+      message:
+        type: string
+      status:
+        type: string
